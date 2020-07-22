@@ -28,6 +28,7 @@ public class WebWorkFlows extends Common {
     @Step("Logout")
     public static void signOut(){
         UIActions.click(mainPage.userAvatar);
+        UIActions.click(mainPage.signOutButton);
         Validations.isDisplayed(cloudinaryLoginPage.signInButton);
     }
 }
