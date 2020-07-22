@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <!-- Initial run settings -->
+    <platformName>web</platformName>
+    <browserName>chrome</browserName>
+
+    <!-- Timeouts -->
+    <defaultTimeout>10</defaultTimeout>
+
+    <!-- Desired Capabilities -->
+
+    <!-- Base URL -->
+    <URL>http://localhost:3333</URL>
+
+    <!-- Grafana Test Data -->
+    <loginUserName>admin</loginUserName>
+    <loginPassword>admin</loginPassword>
+
+    <newUserName>Moshe</newUserName>
+    <userName>Moshe123</userName>
+    <userEmail>me@grafanatest.com</userEmail>
+    <userPassword>mySecretPassword123!</userPassword>
+
+    <!-- API testing -->
+    <apiURL>http://localhost:3333</apiURL>
+    <user>admin</user>
+    <password>admin</password>
+    <existingTeamName>ATeam</existingTeamName>
+    <newTeamName>newTeam</newTeamName>
+    <newTeamEmail>test123@test</newTeamEmail>
+
+
+</configuration>

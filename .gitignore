@@ -1,0 +1,12 @@
+
+# user-specific stuff
+.idea
+
+# Post-build and runtime generated files
+target
+allureReports
+ajcore.*.txt
+**//ajcore.*.txt
+
+# OS-specific stuff
+.DS_Store
