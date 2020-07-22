@@ -6,29 +6,14 @@
     <browserName>chrome</browserName>
 
     <!-- Timeouts -->
-    <defaultTimeout>10</defaultTimeout>
-
-    <!-- Desired Capabilities -->
+    <defaultTimeout>30</defaultTimeout>
 
     <!-- Base URL -->
-    <URL>http://localhost:3333</URL>
+    <URL>https://cloudinary.com/users/login</URL>
 
-    <!-- Grafana Test Data -->
-    <loginUserName>admin</loginUserName>
-    <loginPassword>admin</loginPassword>
-
-    <newUserName>Moshe</newUserName>
-    <userName>Moshe123</userName>
-    <userEmail>me@grafanatest.com</userEmail>
-    <userPassword>mySecretPassword123!</userPassword>
-
-    <!-- API testing -->
-    <apiURL>http://localhost:3333</apiURL>
-    <user>admin</user>
-    <password>admin</password>
-    <existingTeamName>ATeam</existingTeamName>
-    <newTeamName>newTeam</newTeamName>
-    <newTeamEmail>test123@test</newTeamEmail>
+    <!-- Test Data -->
+    <email>dnik885@gmail.com</email>
+    <password>Aa12345!</password>
 
 
 </configuration>

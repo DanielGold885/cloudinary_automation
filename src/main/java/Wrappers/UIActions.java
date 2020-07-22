@@ -11,8 +11,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class UIActions extends Common {
-    public UIActions() throws IOException, SAXException, ParserConfigurationException {
-    }
+
+    public UIActions() throws IOException, SAXException, ParserConfigurationException {}
+
 
     @Step("Click")
     public static void click(WebElement element){

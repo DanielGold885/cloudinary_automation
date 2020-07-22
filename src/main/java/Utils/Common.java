@@ -24,8 +24,7 @@ public class Common extends Base {
 
     String platform = getData("platformName");
 
-    public Common() throws IOException, SAXException, ParserConfigurationException {
-    }
+    public Common() throws IOException, SAXException, ParserConfigurationException {}
 
 
     public static String getData(String nodeName) throws ParserConfigurationException, IOException, SAXException {

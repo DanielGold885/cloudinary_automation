@@ -9,4 +9,8 @@ public class Base {
     public static WebDriver driver;
     public static Actions actions;
     public static WebDriverWait wait;
+
+    public static PageObjects.LoginPage cloudinaryLoginPage;
+    public static PageObjects.MainPage mainPage;
+
 }

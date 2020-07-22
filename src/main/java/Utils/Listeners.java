@@ -12,8 +12,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class Listeners extends Common implements ITestListener {
-    public Listeners() throws IOException, SAXException, ParserConfigurationException {
-    }
+
+    public Listeners() throws IOException, SAXException, ParserConfigurationException {}
+
 
     public void onFinish(ITestContext result) {
         System.out.println("---------------------------- ENDING EXECUTION ----------------------------");
