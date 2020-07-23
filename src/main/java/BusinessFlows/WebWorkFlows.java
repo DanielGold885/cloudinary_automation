@@ -21,7 +21,7 @@ public class WebWorkFlows extends Common {
     public static void signOut() {
         UIActions.click(mainPage.userAvatar);
         UIActions.click(mainPage.signOutButton);
-        Validations.isDisplayed(cloudinaryLoginPage.signInButton);
+        Validations.isDisplayed(mainPageMenuBarassetWidget.signUpForFreeBtn);
     }
 
     public static void uploadAsset(String file, String publicID) {
@@ -32,6 +32,5 @@ public class WebWorkFlows extends Common {
         UIActions.setText(uploadMediaPopup.publicIdInput, publicID);
         UIActions.click(uploadMediaPopup.advancedBtn);
         UIActions.uploadFile(uploadMediaPopup.uploadFileBtn, file);
-        Validations.elementText(assetWidget.recentUploadedAsset, getData("publicId"));
     }
 }

@@ -24,23 +24,23 @@ public class Listeners extends Common implements ITestListener {
 
     public void onTestFailure(ITestResult result) {
         System.out.println("---------------------------- " +
-                "FAILED TEST: " + result.getName() + "----------------------------");
+                "FAILED TEST: " + result.getName() + " ----------------------------");
             saveScreenshot();
     }
 
     public void onTestSkipped(ITestResult result) {
         System.out.println("---------------------------- " +
-                "SKIPPED TEST: " + result.getName() + "----------------------------");
+                "SKIPPED TEST: " + result.getName() + " ----------------------------");
     }
 
     public void onTestStart(ITestResult result) {
         System.out.println("---------------------------- " +
-                "STARTING TEST: " + result.getName() + "----------------------------");
+                "STARTING TEST: " + result.getName() + " ----------------------------");
     }
 
     public void onTestSuccess(ITestResult result) {
         System.out.println("---------------------------- " +
-                "TEST FINISHED SUCCESSFULLY: " + result.getName() + "----------------------------");
+                "TEST FINISHED SUCCESSFULLY: " + result.getName() + " ----------------------------");
     }
 
     @Attachment(value = "Screenshot", type = "image/png")

@@ -38,4 +38,14 @@ public class Validations extends Common {
     public static boolean isEnabled(WebElement element) {
         return element.isEnabled();
     }
+
+//    @Step
+//    public static boolean validaterecentUploadedArtifactId(List<WebElement> elements, String id) {
+//
+//        for (WebElement element : elements) {
+//            return element.getText() == id;
+//        }
+//    }
+
 }
+

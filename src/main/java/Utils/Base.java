@@ -1,6 +1,7 @@
 package Utils;
 
 import PageObjects.AssetWidget;
+import PageObjects.MainPageMenuBar;
 import PageObjects.MediaLibrary;
 import PageObjects.UploadMediaPopup;
 import org.openqa.selenium.WebDriver;
@@ -21,5 +22,6 @@ public class Base {
     public static MediaLibrary mediaLibrary;
     public static UploadMediaPopup uploadMediaPopup;
     public static AssetWidget assetWidget;
+    public static MainPageMenuBar mainPageMenuBarassetWidget;
 
 }

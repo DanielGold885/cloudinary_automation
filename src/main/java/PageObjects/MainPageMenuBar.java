@@ -6,8 +6,8 @@ import org.openqa.selenium.support.How;
 
 import java.util.List;
 
-public class AssetWidget {
+public class MainPageMenuBar {
 
-    @FindBy(how = How.XPATH, using = "//div[@data-test='asset-info-text']")
-    public List<WebElement> assets;
+    @FindBy(how = How.CSS, using = "a[class='btn btn-sm btn-default']")
+    public WebElement signUpForFreeBtn;
 }
