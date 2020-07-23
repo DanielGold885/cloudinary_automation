@@ -25,7 +25,7 @@ public class WebWorkFlows extends Common {
     }
 
     @Step("Upload image to Cloudinary and validateID")
-    public static void uploadAsset(String file, String publicID) throws InterruptedException {
+    public static void uploadAsset(String file, String publicID) {
         UIActions.click(menuBar.mediaLibraryBtn);
         UIActions.click(mediaLibrary.uploadButton);
         UIActions.switchToFrame(driver, uploadMediaPopup.popupIframe);
@@ -39,7 +39,6 @@ public class WebWorkFlows extends Common {
         UIActions.hoverOnElement(assetWidget.uploadedAsset);
         Validations.isDisplayed(assetWidget.manageBtn);
         UIActions.click(assetWidget.manageBtn);
-        Thread.sleep(1000);
         Validations.validateAttributeValue(manageAssetPage.managePageHeadLine, "value", getData("publicId"));
     }
 }

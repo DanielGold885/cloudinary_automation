@@ -26,10 +26,9 @@ public class Sanity extends Common {
         WebWorkFlows.signOut();
     }
 
-
     @Test(description = "Upload image test")
     @Description("Validate successful asset upload with ID to Cloudinary and validate")
-    public void uploadAssetWithID() throws InterruptedException {
+    public void uploadAssetWithID() {
         WebWorkFlows.uploadAsset(getData("filePath"), getData("publicId"));
     }
 }
