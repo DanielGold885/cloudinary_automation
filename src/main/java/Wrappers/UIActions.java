@@ -43,17 +43,21 @@ public class UIActions extends Common {
 
     @Step("Upload file")
     public static void uploadFile(WebElement element, String filePath) {
-    //    wait.until(ExpectedConditions.elementToBeClickable(element));
         element.sendKeys(filePath);
     }
 
-
-    public static void swithToFrame(WebDriver driver, WebElement element) {
+    @Step("Switch to iframe")
+    public static void switchToFrame(WebDriver driver, WebElement element) {
         driver.switchTo().frame(element);
     }
 
-
-    public static void swithToParentFrame(WebDriver driver) {
+    @Step("Switch to parent frame")
+    public static void switchToParentFrame(WebDriver driver) {
         driver.switchTo().parentFrame();
+    }
+
+    @Step("Switch to default frame")
+    public static void switchToDefaultFrame(WebDriver driver) {
+        driver.switchTo().defaultContent();
     }
 }

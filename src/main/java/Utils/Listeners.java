@@ -31,7 +31,6 @@ public class Listeners extends Common implements ITestListener {
     public void onTestFailure(ITestResult result) {
         System.out.println("---------------------------- " +
                 "FAILED TEST: " + result.getName() + "----------------------------");
-        if(!platform.equalsIgnoreCase("api"))
             saveScreenshot();
     }
 

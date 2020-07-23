@@ -12,5 +12,6 @@ public class PageManager extends Base {
         menuBar = PageFactory.initElements(driver, PageObjects.MenuBar.class);
         mediaLibrary = PageFactory.initElements(driver, PageObjects.MediaLibrary.class);
         uploadMediaPopup = PageFactory.initElements(driver, PageObjects.UploadMediaPopup.class);
+        assetWidget = PageFactory.initElements(driver, PageObjects.AssetWidget.class);
     }
 }

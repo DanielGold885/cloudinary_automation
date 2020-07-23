@@ -15,7 +15,8 @@ import java.io.IOException;
 
 public class WebWorkFlows extends Common {
 
-    public WebWorkFlows() throws IOException, SAXException, ParserConfigurationException {}
+    public WebWorkFlows() throws IOException, SAXException, ParserConfigurationException {
+    }
 
 
     @Step("Login to Cloudinary")
@@ -26,22 +27,21 @@ public class WebWorkFlows extends Common {
         Validations.isDisplayed(menuBar.welcome);
     }
 
-
     @Step("Logout")
-    public static void signOut(){
+    public static void signOut() {
         UIActions.click(mainPage.userAvatar);
         UIActions.click(mainPage.signOutButton);
         Validations.isDisplayed(cloudinaryLoginPage.signInButton);
     }
 
-
-    public static void uploadAsset(String file, String publicID) {
+    public static void uploadAsset(String file, String publicID) throws IOException, SAXException, ParserConfigurationException {
         UIActions.click(menuBar.mediaLibraryBtn);
         UIActions.click(mediaLibrary.uploadButton);
-        UIActions.swithToFrame(driver, uploadMediaPopup.popupIframe);
+        UIActions.switchToFrame(driver, uploadMediaPopup.popupIframe);
         UIActions.click(uploadMediaPopup.advancedBtn);
         UIActions.setText(uploadMediaPopup.publicIdInput, publicID);
         UIActions.click(uploadMediaPopup.advancedBtn);
         UIActions.uploadFile(uploadMediaPopup.uploadFileBtn, file);
+        Validations.elementText(assetWidget.recentUploadedAsset, getData("publicId"));
     }
 }

@@ -9,7 +9,18 @@
     <version>1.0-SNAPSHOT</version>
 
 
+    <properties>
+        <aspectj.version>1.9.2</aspectj.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.2</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
@@ -56,7 +67,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <includes>
-                        <include>SanityTests.grafana</include>
+                        <include>CloudinarySanity.Sanity</include>
                     </includes>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

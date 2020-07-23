@@ -9,6 +9,4 @@ public class MediaLibrary {
 
     @FindBy(how = How.CSS, using = ".btn-upload")
     public WebElement uploadButton;
-
-
 }

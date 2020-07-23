@@ -18,6 +18,7 @@ public class Validations extends Common {
     public Validations() throws IOException, SAXException, ParserConfigurationException {
     }
 
+
     @Step("Validate element text")
     public static void elementText(WebElement element, String expectedValue) {
         assertEquals(element.getText(), expectedValue);

@@ -22,16 +22,36 @@ import java.util.concurrent.TimeUnit;
 
 public class Common extends Base {
 
-    String platform = getData("platformName");
+    public static String platform = getData("platformName");
 
-    public Common() throws IOException, SAXException, ParserConfigurationException {}
+    //public Common() throws IOException, SAXException, ParserConfigurationException {}
+
+    // Parse XML - Receives node as String and returns value.
+    public static String getData(String nodeName) {
+//        File fXmlFile = new File("./configurationFiles/config.xml");
+//        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+//        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+//        Document doc = dBuilder.parse(fXmlFile);
+//        doc.getDocumentElement().normalize();
+//        return doc.getElementsByTagName(nodeName).item(0).getTextContent();
 
 
-    public static String getData(String nodeName) throws ParserConfigurationException, IOException, SAXException {
-        File fXmlFile = new File("./configurationFiles/config.xml");
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-        Document doc = dBuilder.parse(fXmlFile);
+
+        DocumentBuilder dBuilder;
+        Document doc=null;
+        File fXmlFile=new File("./configurationFiles/config.xml");
+        DocumentBuilderFactory dbFactory=DocumentBuilderFactory.newInstance();
+        try
+        {
+            dBuilder=dbFactory.newDocumentBuilder();
+            doc=dBuilder.parse(fXmlFile);
+        }
+
+        catch(Exception e){
+
+            System.out.println("Exception in reading XML file: "+e);
+
+        }
         doc.getDocumentElement().normalize();
         return doc.getElementsByTagName(nodeName).item(0).getTextContent();
     }
@@ -45,9 +65,7 @@ public class Common extends Base {
             driver = initInternetExplorerDriver();
         else
             throw new RuntimeException("Invalid Platform type stated!");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().setSize(new Dimension(1024, 768));
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("defaultTimeout")));
         driver.get(getData("URL"));
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("defaultTimeout")),
@@ -78,6 +96,8 @@ public class Common extends Base {
         if (platform.equalsIgnoreCase("web"))
             initBrowser(getData("browserName"));
         else if (platform.equalsIgnoreCase("remote"))
+            initBrowser(getData("browserName"));
+        else if (platform.equalsIgnoreCase("mobile"))
             initBrowser(getData("browserName"));
         else
             throw new RuntimeException("Invalid Platform name!");

@@ -1,5 +1,6 @@
 package Utils;
 
+import PageObjects.AssetWidget;
 import PageObjects.MediaLibrary;
 import PageObjects.UploadMediaPopup;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +13,12 @@ public class Base {
     public static Actions actions;
     public static WebDriverWait wait;
 
+    // Declaring Page Objects
     public static PageObjects.LoginPage cloudinaryLoginPage;
     public static PageObjects.MainPage mainPage;
     public static PageObjects.MenuBar menuBar;
     public static MediaLibrary mediaLibrary;
     public static UploadMediaPopup uploadMediaPopup;
+    public static AssetWidget assetWidget;
 
 }
