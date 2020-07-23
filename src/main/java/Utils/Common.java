@@ -56,10 +56,10 @@ public class Common extends Base {
             throw new RuntimeException("Invalid Platform type stated!");
         driver.manage().window().setSize(new Dimension(1024, 768));
         wait = new WebDriverWait(driver, Long.parseLong(getData("defaultTimeout")));
-        driver.get(getData("URL"));
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("defaultTimeout")),
                 TimeUnit.SECONDS);
         actions = new Actions(driver);
+        driver.get(getData("URL"));
     }
 
     public static WebDriver initChromeDriver() {

@@ -2,7 +2,9 @@ package Wrappers;
 
 import Utils.Common;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
@@ -31,21 +33,14 @@ public class Validations extends Common {
 
     @Step("Validate text")
     public static boolean isDisplayed(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
         return element.isDisplayed();
     }
 
     @Step("Validate text")
     public static boolean isEnabled(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
         return element.isEnabled();
     }
-
-//    @Step
-//    public static boolean validaterecentUploadedArtifactId(List<WebElement> elements, String id) {
-//
-//        for (WebElement element : elements) {
-//            return element.getText() == id;
-//        }
-//    }
-
 }
 
