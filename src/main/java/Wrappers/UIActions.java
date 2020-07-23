@@ -2,6 +2,7 @@ package Wrappers;
 
 import Utils.Common;
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -38,5 +39,21 @@ public class UIActions extends Common {
     @Step("Mouse hover")
     public static void hoverOnElement(WebElement element){
         actions.moveToElement(element).build().perform();
+    }
+
+    @Step("Upload file")
+    public static void uploadFile(WebElement element, String filePath) {
+    //    wait.until(ExpectedConditions.elementToBeClickable(element));
+        element.sendKeys(filePath);
+    }
+
+
+    public static void swithToFrame(WebDriver driver, WebElement element) {
+        driver.switchTo().frame(element);
+    }
+
+
+    public static void swithToParentFrame(WebDriver driver) {
+        driver.switchTo().parentFrame();
     }
 }

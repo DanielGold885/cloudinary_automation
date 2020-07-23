@@ -38,4 +38,9 @@ public class Validations extends Common {
     public static boolean isDisplayed(WebElement element) {
         return element.isDisplayed();
     }
+
+    @Step("Validate text")
+    public static boolean isEnabled(WebElement element) {
+        return element.isEnabled();
+    }
 }

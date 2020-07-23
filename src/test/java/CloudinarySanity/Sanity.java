@@ -32,7 +32,8 @@ public class Sanity extends Common {
 
     @Test(description = "Upload image test")
     @Description("Upload image to Cloudinary and validate successful upload")
-    public void uploadImageToCloudinary() {
+    public void uploadImageToCloudinary() throws IOException, SAXException, ParserConfigurationException {
+        WebWorkFlows.uploadAsset(getData("filePath"), getData("publicId"));
 
     }
 

@@ -2,6 +2,8 @@ package BusinessFlows;
 
 import PageObjects.LoginPage;
 import PageObjects.MainPage;
+import PageObjects.MediaLibrary;
+import PageObjects.UploadMediaPopup;
 import Utils.Common;
 import Wrappers.UIActions;
 import Wrappers.Validations;
@@ -21,7 +23,7 @@ public class WebWorkFlows extends Common {
         UIActions.setText(cloudinaryLoginPage.emailInputField, email);
         UIActions.setText(cloudinaryLoginPage.passwordInputField, password);
         UIActions.click(cloudinaryLoginPage.signInButton);
-        Validations.isDisplayed(mainPage.welcome);
+        Validations.isDisplayed(menuBar.welcome);
     }
 
 
@@ -30,5 +32,16 @@ public class WebWorkFlows extends Common {
         UIActions.click(mainPage.userAvatar);
         UIActions.click(mainPage.signOutButton);
         Validations.isDisplayed(cloudinaryLoginPage.signInButton);
+    }
+
+
+    public static void uploadAsset(String file, String publicID) {
+        UIActions.click(menuBar.mediaLibraryBtn);
+        UIActions.click(mediaLibrary.uploadButton);
+        UIActions.swithToFrame(driver, uploadMediaPopup.popupIframe);
+        UIActions.click(uploadMediaPopup.advancedBtn);
+        UIActions.setText(uploadMediaPopup.publicIdInput, publicID);
+        UIActions.click(uploadMediaPopup.advancedBtn);
+        UIActions.uploadFile(uploadMediaPopup.uploadFileBtn, file);
     }
 }

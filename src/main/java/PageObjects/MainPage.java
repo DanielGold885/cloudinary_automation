@@ -13,9 +13,6 @@ public class MainPage extends Common {
     public MainPage() throws IOException, SAXException, ParserConfigurationException {}
 
 
-    @FindBy(how = How.CLASS_NAME, using = "title-row")
-    public WebElement welcome;
-
     @FindBy(how = How.CSS, using = "div[aria-describedby='tippy-tooltip-1'] *:nth-child(1)")
     public WebElement userAvatar;
 
