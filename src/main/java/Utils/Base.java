@@ -1,9 +1,6 @@
 package Utils;
 
-import PageObjects.AssetWidget;
-import PageObjects.MainPageMenuBar;
-import PageObjects.MediaLibrary;
-import PageObjects.UploadMediaPopup;
+import PageObjects.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,5 +20,6 @@ public class Base {
     public static UploadMediaPopup uploadMediaPopup;
     public static AssetWidget assetWidget;
     public static MainPageMenuBar mainPageMenuBarassetWidget;
+    public static ManageAssetPage manageAssetPage;
 
 }

@@ -31,6 +31,13 @@ public class Validations extends Common {
         assertEquals(actual, expected);
     }
 
+    @Step("Validate attribute value")
+    public static void validateAttributeValue(WebElement element, String attribute, String expectedValue) {
+
+        String actualValue = element.getAttribute(attribute);
+        assertEquals(actualValue, expectedValue);
+    }
+
     @Step("Validate text")
     public static boolean isDisplayed(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));

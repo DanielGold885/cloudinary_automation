@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 
 @Listeners(Utils.Listeners.class)
-public class Sanity extends Common{
+public class Sanity extends Common {
 
 
     public Sanity() {
@@ -28,9 +28,8 @@ public class Sanity extends Common{
 
 
     @Test(description = "Upload image test")
-    @Description("Upload image to Cloudinary and validate successful upload")
-    public void uploadImageToCloudinary() throws InterruptedException {
+    @Description("Validate successful asset upload with ID to Cloudinary and validate")
+    public void uploadAssetWithID() throws InterruptedException {
         WebWorkFlows.uploadAsset(getData("filePath"), getData("publicId"));
     }
-
 }

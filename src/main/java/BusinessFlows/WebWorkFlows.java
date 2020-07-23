@@ -37,6 +37,9 @@ public class WebWorkFlows extends Common {
         Validations.isDisplayed(assetWidget.uploadedAsset);
         Validations.elementText(assetWidget.uploadedAsset, getData("publicId"));
         UIActions.hoverOnElement(assetWidget.uploadedAsset);
-        Validations.isDisplayed(assetWidget.threeDotAssetBtn);
+        Validations.isDisplayed(assetWidget.manageBtn);
+        UIActions.click(assetWidget.manageBtn);
+        Thread.sleep(1000);
+        Validations.validateAttributeValue(manageAssetPage.managePageHeadLine, "value", getData("publicId"));
     }
 }
