@@ -24,39 +24,28 @@ public class Common extends Base {
 
     public static String platform = getData("platformName");
 
-    //public Common() throws IOException, SAXException, ParserConfigurationException {}
 
     // Parse XML - Receives node as String and returns value.
     public static String getData(String nodeName) {
-//        File fXmlFile = new File("./configurationFiles/config.xml");
-//        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-//        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-//        Document doc = dBuilder.parse(fXmlFile);
-//        doc.getDocumentElement().normalize();
-//        return doc.getElementsByTagName(nodeName).item(0).getTextContent();
-
-
 
         DocumentBuilder dBuilder;
-        Document doc=null;
-        File fXmlFile=new File("./configurationFiles/config.xml");
-        DocumentBuilderFactory dbFactory=DocumentBuilderFactory.newInstance();
-        try
-        {
-            dBuilder=dbFactory.newDocumentBuilder();
-            doc=dBuilder.parse(fXmlFile);
-        }
+        Document doc = null;
 
-        catch(Exception e){
+        File fXmlFile = new File("./configurationFiles/config.xml");
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        try {
+            dBuilder = dbFactory.newDocumentBuilder();
+            doc = dBuilder.parse(fXmlFile);
+        } catch (Exception e) {
 
-            System.out.println("Exception in reading XML file: "+e);
-
+            System.out.println("Exception in reading XML file: " + e);
         }
         doc.getDocumentElement().normalize();
         return doc.getElementsByTagName(nodeName).item(0).getTextContent();
     }
 
-    public static void initBrowser(String browserType) throws ParserConfigurationException, IOException, SAXException {
+
+    public static void initBrowser(String browserType) {
         if (browserType.equalsIgnoreCase("chrome"))
             driver = initChromeDriver();
         else if (browserType.equalsIgnoreCase("firefox"))
@@ -90,8 +79,7 @@ public class Common extends Base {
 
 
     @BeforeClass
-    public void startSession() throws
-            IOException, ParserConfigurationException, SAXException, InterruptedException {
+    public void startSession() {
 
         if (platform.equalsIgnoreCase("web"))
             initBrowser(getData("browserName"));

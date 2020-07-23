@@ -6,7 +6,7 @@
     <browserName>chrome</browserName>
 
     <!-- Timeouts -->
-    <defaultTimeout>10</defaultTimeout>
+    <defaultTimeout>30</defaultTimeout>
 
     <!-- Base URL -->
     <URL>https://cloudinary.com/users/login</URL>

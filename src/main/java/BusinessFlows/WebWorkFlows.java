@@ -1,22 +1,12 @@
 package BusinessFlows;
 
-import PageObjects.LoginPage;
-import PageObjects.MainPage;
-import PageObjects.MediaLibrary;
-import PageObjects.UploadMediaPopup;
 import Utils.Common;
 import Wrappers.UIActions;
 import Wrappers.Validations;
 import io.qameta.allure.Step;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 
 public class WebWorkFlows extends Common {
 
-    public WebWorkFlows() throws IOException, SAXException, ParserConfigurationException {
-    }
 
 
     @Step("Login to Cloudinary")
@@ -34,7 +24,7 @@ public class WebWorkFlows extends Common {
         Validations.isDisplayed(cloudinaryLoginPage.signInButton);
     }
 
-    public static void uploadAsset(String file, String publicID) throws IOException, SAXException, ParserConfigurationException {
+    public static void uploadAsset(String file, String publicID) {
         UIActions.click(menuBar.mediaLibraryBtn);
         UIActions.click(mediaLibrary.uploadButton);
         UIActions.switchToFrame(driver, uploadMediaPopup.popupIframe);

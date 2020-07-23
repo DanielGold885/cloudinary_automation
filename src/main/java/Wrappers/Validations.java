@@ -4,19 +4,13 @@ import Utils.Common;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.xml.sax.SAXException;
 
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
 
 
 public class Validations extends Common {
-
-    public Validations() throws IOException, SAXException, ParserConfigurationException {
-    }
 
 
     @Step("Validate element text")

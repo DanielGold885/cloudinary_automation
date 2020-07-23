@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Base {
 
+    //Declaring driver related objects
     public static WebDriver driver;
     public static Actions actions;
     public static WebDriverWait wait;

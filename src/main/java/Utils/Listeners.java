@@ -6,14 +6,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 
 public class Listeners extends Common implements ITestListener {
-
-    public Listeners() throws IOException, SAXException, ParserConfigurationException {}
 
 
     public void onFinish(ITestContext result) {
