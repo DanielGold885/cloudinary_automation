@@ -24,6 +24,7 @@ public class WebWorkFlows extends Common {
         Validations.isDisplayed(mainPageMenuBarassetWidget.signUpForFreeBtn);
     }
 
+    @Step("Upload image to Cloudinary")
     public static void uploadAsset(String file, String publicID) {
         UIActions.click(menuBar.mediaLibraryBtn);
         UIActions.click(mediaLibrary.uploadButton);
@@ -32,5 +33,6 @@ public class WebWorkFlows extends Common {
         UIActions.setText(uploadMediaPopup.publicIdInput, publicID);
         UIActions.click(uploadMediaPopup.advancedBtn);
         UIActions.uploadFile(uploadMediaPopup.uploadFileBtn, file);
+        UIActions.switchToDefaultFrame(driver);
     }
 }

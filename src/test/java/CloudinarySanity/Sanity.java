@@ -30,7 +30,7 @@ public class Sanity extends Common{
     @Test(description = "Upload image test")
     @Description("Upload image to Cloudinary and validate successful upload")
     public void uploadImageToCloudinary() {
-//        WebWorkFlows.uploadAsset(getData("filePath"), getData("publicId"));
+        WebWorkFlows.uploadAsset(getData("filePath"), getData("publicId"));
     }
 
 }
