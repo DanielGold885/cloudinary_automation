@@ -20,10 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+
 public class Common extends Base {
 
-    public static String platform = getData("platformName");
-
+    private String platform = getData("platformName");
 
     // Parse XML - Receives node as String and returns value.
     public static String getData(String nodeName) {
