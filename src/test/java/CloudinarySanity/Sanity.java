@@ -13,9 +13,6 @@ import org.testng.annotations.Test;
 public class Sanity extends Common {
 
 
-    public Sanity() {
-    }
-
     @BeforeMethod
     public void login() {
         WebWorkFlows.login(getData("email"), getData("password"));
